@@ -22,10 +22,7 @@ export default {
 </script>
 
 <style>
-  .item {
-    border: 1px solid black;
-    padding-left: 10px;
-  }
+
   .done {
     text-decoration: line-through;
     color: gray;

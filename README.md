@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+Учебное to-do приложение.
+
 ## Build Setup
 
 ``` bash
