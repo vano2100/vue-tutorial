@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <h2>My to-do list</h2>
-    <input type="text" v-model="newName">
-    <button @click="addItem">add</button>
+    <div class="form-group mb-2">
+      <label for="taskName" class="col-sm-2 col-form-label">Название задачи:</label>
+      <input class="form-control" type="text" v-model="newName" id="taskName">
+    </div>
+    <button class="btn btn-primary  mb-2" @click="addItem">Добавить задачу</button>
     <hr>
 
-    <div class="items">
-      <app-item 
-      v-for="itemCaption in itemCaptions"
-      v-bind:itemCaption="itemCaption"
+    <div class="tasks">
+      В работе
+      <app-item
+      v-for="task in tasks"
+      v-bind:task="task"
       ></app-item>
     </div>
-    
+
   </div>
 </template>
 
@@ -22,13 +26,13 @@ export default {
   name: 'app',
   data () {
     return {
-      itemCaptions: ['item1'],
+      tasks: [],
       newName: ''
     }
   },
   methods: {
     addItem: function(){
-      this.itemCaptions.push(this.newName)
+      this.tasks.push(this.newName)
       this.newName = ''
     }
   },

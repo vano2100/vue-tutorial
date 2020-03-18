@@ -1,23 +1,18 @@
 <template>
-  <div class="item" :class="{'done': doneTask}">
-    <button @click="doneTask = !doneTask">V</button>
-    {{ itemCaption }}
+  <div class="alert alert-primary" :class="{'done': doneTask}">
+    <button class="btn btn-primary btn-sm" @click="doneTask = !doneTask">√</button>
+    {{ task }}
   </div>
 </template>
 
 <script>
 export default {
-  props: ['itemCaption'],
+  props: ['task'],
   data () {
     return {
       doneTask: false
     }
-  },
-  methods: {
-    markDone: function(){
-      doneTask = !doneTask
-    }
-  },
+  }
 }
 </script>
 
